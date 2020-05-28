@@ -36,16 +36,16 @@ public class CardTrick {
 //        }
         
         //insert code to ask the user for Card value and suit, create their card
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please enter the card's value [1 to 13]");
-        int pickedValue = Integer.parseInt(input.nextLine());
-        System.out.println("Please enter the card's suit [0 for Hearts, " +
-            "1 for Diamonds, 2 for Spades, 3 for Clubs]");
-        int pickedSuit = Integer.parseInt(input.nextLine());
-        
-        Card pickedCard = new Card();
-        pickedCard.setValue(pickedValue);
-        pickedCard.setSuit(Card.SUITS[pickedSuit]);
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Please enter the card's value [1 to 13]");
+//        int pickedValue = Integer.parseInt(input.nextLine());
+//        System.out.println("Please enter the card's suit [0 for Hearts, " +
+//            "1 for Diamonds, 2 for Spades, 3 for Clubs]");
+//        int pickedSuit = Integer.parseInt(input.nextLine());
+//        
+//        Card pickedCard = new Card();
+//        pickedCard.setValue(pickedValue);
+//        pickedCard.setSuit(Card.SUITS[pickedSuit]);
         
         //hard-coded Ace of Diamonds
         Card hardCodedCard = new Card();
@@ -53,12 +53,12 @@ public class CardTrick {
         hardCodedCard.setSuit(Card.SUITS[1]);
         
         System.out.printf("You have selected the [%d of %s]%n", 
-            pickedCard.getValue(), pickedCard.getSuit());
+            hardCodedCard.getValue(), hardCodedCard.getSuit());
         // and search magicHand here
         boolean isFound = false;
         for (Card card: magicHand)
         {            
-            if (pickedCard.getValue() == card.getValue() && pickedCard.getSuit() == card.getSuit())
+            if (hardCodedCard.getValue() == card.getValue() && hardCodedCard.getSuit() == card.getSuit())
             {
                 isFound = true;
             }
