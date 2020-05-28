@@ -34,13 +34,14 @@ public class CardTrick {
         luckyCard.setValue(7);
         luckyCard.setSuit("Hearts");
         
-        System.out.println("Is the lucky card in the magic deck?\n...");
-        
         //initialize variables to compare in following for-loop
         String luckySuit = luckyCard.getSuit();
         String cSuit;
         int luckyValue = luckyCard.getValue();
         int cValue;
+        
+        System.out.println("Your lucky card is the " + luckyValue + " of "
+                + luckySuit + ".\nIs the lucky card in the magic deck?\n...");
         
         for(int i = 0; i < magicHand.length; i++){
             cSuit = magicHand[i].getSuit();
@@ -60,8 +61,6 @@ public class CardTrick {
             if (i == magicHand.length - 1){
                 System.out.println("Better luck next time!");
             }
-            
-            scanner.close();
         }
  
     }
