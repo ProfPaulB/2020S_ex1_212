@@ -11,12 +11,19 @@ package pickacard;
  * @author dancye
  * @author Paul Bonenfant
  * @author Elie Khuzam
+ *
  */
 public class Card
 {
 
    private String suit; //clubs, spades, diamonds, hearts
    private int value;//1-13
+
+   public Card (String suit, int value)
+   {
+      this.suit = suit;
+      this.value = value;
+   }
 
    public static final String[] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
 
