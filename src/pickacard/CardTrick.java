@@ -1,5 +1,5 @@
 package pickacard;
-import java.util.Scanner;
+
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects and then asks the user to pick a card and
@@ -25,22 +25,17 @@ public class CardTrick {
             magicHand[i] = c;
         }
 
-        //insert code to ask the user for Card value and suit, create their card
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter card value 1-13");
-        int cardVal = in.nextInt();
-        System.out.println("Enter suit value 0-3 [hearts,diamond,spades,clubs]");
-        int suitVal = in.nextInt();
-        Card user = new Card();
-        user.setValue(cardVal);
-        user.setSuit(Card.SUITS[suitVal]);
+       //Hard code lucky card 
+        Card luckyCard = new Card();
+        luckyCard.setValue(5);
+        luckyCard.setSuit(Card.SUITS[2]);
         // and search magicHand here
 //      Testing output
-//      System.out.println("User Card " + user.getValue() + " " + user.getSuit());
+//      System.out.println("User Card " + luckyCard.getValue() + " " + luckyCard.getSuit());
         for(Card c : magicHand){
 //          Testing output
 //          System.out.println(c.getValue() + " " + c.getSuit());
-            if(user.getSuit().equals(c.getSuit()) && user.getValue() == c.getValue()){
+            if(luckyCard.getSuit().equals(c.getSuit()) && luckyCard.getValue() == c.getValue()){
                 match = true;
                 break;
             }
