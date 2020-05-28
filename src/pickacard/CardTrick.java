@@ -29,27 +29,17 @@ public class CardTrick {
             //System.out.println(c.getValue() + " of " + c.getSuit());
         }
 
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
+        //create luckyCard object with predetermined suit and value
+        Card luckyCard = new Card();
+        luckyCard.setValue(7);
+        luckyCard.setSuit("Hearts");
         
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Pick a card, any card!\nEnter a whole number "
-                + "between 1 and 13:");
-        
-        Card userCard = new Card();
-        userCard.setValue(scanner.nextInt());
-        
-        System.out.println("Now enter a whole number between 0 and :");
-        userCard.setSuit(Card.SUITS[scanner.nextInt()]);
-        
-        System.out.println("Is your card in the magic deck?\n...");
+        System.out.println("Is the lucky card in the magic deck?\n...");
         
         //initialize variables to compare in following for-loop
-        String userSuit = userCard.getSuit();
+        String luckySuit = luckyCard.getSuit();
         String cSuit;
-        int userValue = userCard.getValue();
+        int luckyValue = luckyCard.getValue();
         int cValue;
         
         for(int i = 0; i < magicHand.length; i++){
@@ -58,7 +48,7 @@ public class CardTrick {
             
             //compare suits and values
             //if both match, print congrats and break loop
-            if(userSuit.equals(cSuit) && userValue == cValue){
+            if(luckySuit.equals(cSuit) && luckyValue == cValue){
                 System.out.println("We have a match! Thanks for playing!");
                 
                 break;
