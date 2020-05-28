@@ -24,7 +24,7 @@ public class CardTrick {
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
         } while (cardCompare(i, (c.getValue()-1), c.getSuit()));      
         magicHand[i]=c;
-        System.out.println(magicHand[i].getValue()+", "+magicHand[i].getSuit());
+        //System.out.println(magicHand[i].getValue()+", "+magicHand[i].getSuit());
         }
     
     Card cardUser = new Card();
@@ -59,18 +59,25 @@ public class CardTrick {
   }
   
   public static void cardMatch(Card user, Card[] hand){
-      int k=0;
-      while(!user.getSuit().equals(hand[k].getSuit()) && user.getValue()!=hand[k].getValue()){
-      ++k;
-      if (k==7)
-        break;
-    }
-     //System.out.println(k);
-    if (k<7)
+      int i;
+      boolean flag = false;
+      for(i=0;i<7;i++){
+        if ((user.getSuit().toLowerCase().equals(hand[i].getSuit().toLowerCase())) 
+              && (user.getValue()==hand[i].getValue())){
         System.out.println("The user's card is in the magic hand!");
-    else
-        System.out.println("The user's card is not in the magic hand!");
+        flag = true;
+        break;
+        }
+        else{
+        continue;
+        }
+      }
+      //System.out.println(i);
+      if (i==7 && flag == false){
+          System.out.println("The user's card is not in the magic hand!");
+      }
   }
+  
   public static int validValue(){
       boolean flag = true;
       int num=0;
@@ -88,7 +95,7 @@ public class CardTrick {
               }
           }
           else
-              System.out.println("Error: Please input a number");
+              System.out.println("Error: Please input an Integer.");
           }
           return num;
       }
@@ -99,8 +106,11 @@ public static String validSuit(){
       while(flag){
           System.out.println("Please input the Card Suit:");
           input = in.next();
-          System.out.println(input);
-          if(!"Hearts".equals(input)&&!"Diamonds".equals(input)&&!"Spades".equals(input)&&!"Clubs".equals(input)){   
+          //System.out.println(input);
+          if(!"hearts".equals(input.toLowerCase())
+             &&!"diamonds".equals(input.toLowerCase())
+             &&!"spades".equals(input.toLowerCase())
+             &&!"clubs".equals(input.toLowerCase())){   
               System.out.println
               ("Error: Suit must be \"Hearts\", \"Diamonds\", \"Spades\", or \"Clubs\".");
           }
