@@ -38,11 +38,11 @@ public class CardTrick {
   public static boolean cardCompare(int i, int value, String suit){
     boolean result = false;
     int s;
-    if (suit == "Hearts")
+    if ("Hearts".equals(suit))
       s=0;
-    else if (suit == "Diamonds")
+    else if ("Diamonds".equals(suit))
       s=1;
-    else if (suit == "Spades")
+    else if ("Spades".equals(suit))
       s=2;
     else
       s=3;
@@ -99,15 +99,13 @@ public static String validSuit(){
       while(flag){
           System.out.println("Please input the Card Suit:");
           input = in.next();
-          for(int i=0;i<4;i++) {
-              if(input!=Card.SUITS[i]){
-                  
-                  System.out.println
-                  ("Error: Suit must be \"Hearts\", \"Diamonds\", \"Spades\", or \"Clubs\".");
-              }
-              else{
-                  flag=false;
-              }
+          System.out.println(input);
+          if(!"Hearts".equals(input)&&!"Diamonds".equals(input)&&!"Spades".equals(input)&&!"Clubs".equals(input)){   
+              System.out.println
+              ("Error: Suit must be \"Hearts\", \"Diamonds\", \"Spades\", or \"Clubs\".");
+          }
+          else{
+              flag=false;
           }
       }
           return input;
