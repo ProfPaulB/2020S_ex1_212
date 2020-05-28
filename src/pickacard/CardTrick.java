@@ -41,7 +41,8 @@ public class CardTrick {
         luckyCard.setValue(7);
         luckyCard.setSuit("Hearts");
         cardMatch(luckyCard, magicHand);
-        
+    }
+    
   public static boolean cardCompare(int i, int value, String suit){
     boolean result = false;
     int s;
