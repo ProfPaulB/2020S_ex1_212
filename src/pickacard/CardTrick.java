@@ -25,6 +25,9 @@ public class CardTrick
          //c.setValue(insert call to random number generator here)
          //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
       }
+      Card luckyCard=new Card();
+      luckyCard.setValue(7);
+      luckyCard.setSuit("diamond");
       System.out.println("Enter Suit of Card : ");
       String s = sc.next();//Card Suit inserted by user.
       System.out.println("Enter Card number : \n 1 for Ace\n 11 for Jack\n 12 for Queen\n 13 for King");
