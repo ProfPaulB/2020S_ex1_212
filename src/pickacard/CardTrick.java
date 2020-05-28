@@ -21,21 +21,21 @@ public class CardTrick
          int value = rnd.nextInt(13) + 1;
          int rank = rnd.nextInt(3);
          magicHand[i] = new Card(Card.SUITS[rank], value);
+         System.out.println(magicHand[i].getSuit() + " " + magicHand[i].getValue());
       }
-
-      int newValue = 7;
-      String newSuit = "Diamonds";
-
-      Card luckyCard = new Card(newSuit, newValue);
-
+      Card luckyCard = new Card("Diamonds", 7);
+      String magicCard = "";
 
       for (int i = 0; i < magicHand.length; i++) {
-         if (newValue == luckyCard.getValue() && newSuit.equals(luckyCard.getSuit())) {
-            System.out.println("You Win!");
+         if (magicHand[i].getValue() == luckyCard.getValue() && magicHand[i].getSuit().equals(luckyCard.getSuit())) {
+            magicCard = "You Win!!";
             break;
          }
-         System.out.println("Try Again");
+         magicCard = "Try Again!!";
       }
+      System.out.println(magicCard);
+
+
 
 
 //      Scanner scan = new Scanner(System.in);
@@ -45,15 +45,13 @@ public class CardTrick
 
 //      String magicCard = "";
 //      for (int i = 0; i < magicHand.length; i++) {
-//         if (c.getValue() == value && c.getSuit().equals(suit)) {
+//         if (magicHand[i].getValue() == value && magicHand[i].getSuit().equals(suit)) {
 //            magicCard = "You Win!!";
 //            break;
 //         }
 //         magicCard = "Try Again!!";
 //      }
 //      System.out.println(magicCard);
-
-
 //insert code to ask the user for Card value and suit, create their card
       // and search magicHand here
       //Then report the result here
