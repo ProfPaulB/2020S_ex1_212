@@ -23,6 +23,7 @@ public class CardTrick
          magicHand[i] = new Card(Card.SUITS[rank], value);
          System.out.println(magicHand[i].getSuit() + " " + magicHand[i].getValue());
       }
+
       Card luckyCard = new Card("Diamonds", 7);
       String magicCard = "";
 
