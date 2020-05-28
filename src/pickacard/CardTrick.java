@@ -24,7 +24,7 @@ public class CardTrick {
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
         } while (cardCompare(i, (c.getValue()-1), c.getSuit()));      
         magicHand[i]=c;
-        //System.out.println(magicHand[i].getValue()+", "+magicHand[i].getSuit());
+        System.out.println(magicHand[i].getValue()+", "+magicHand[i].getSuit());
         }
     
     Card cardUser = new Card();
@@ -46,12 +46,12 @@ public class CardTrick {
       s=2;
     else
       s=3;
-    boolean[][][] isEqual = new boolean[7][13][4];
-    isEqual[i][value][s]= true;
+    
+    Card.isEqual[i][value][s]= true;
     for (int j=0; j<=i; j++){
-      if (isEqual[j][value][s]&&(j!=i)){
+      if (Card.isEqual[j][value][s]&&(j!=i)){
         result = true;
-        isEqual[i][value][s]= false;
+        Card.isEqual[i][value][s]= false;
         break;
       }
     }
@@ -60,7 +60,7 @@ public class CardTrick {
   
   public static void cardMatch(Card user, Card[] hand){
       int k=0;
-      while(user.getSuit()!=hand[k].getSuit()&&user.getValue()!=hand[k].getValue()){
+      while(!user.getSuit().equals(hand[k].getSuit()) && user.getValue()!=hand[k].getValue()){
       ++k;
       if (k==7)
         break;
