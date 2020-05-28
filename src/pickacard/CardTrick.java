@@ -57,10 +57,8 @@ public class CardTrick
 
    public void inputCard (Scanner sc)
    {
-      System.out.println("Enter a suite (clubs, spades, diamonds, hearts)");
-      s = sc.nextLine();
-      System.out.println("Enter a number between 1 to 13 (note that Ace = 1, Jack -11, Queen =12, King = 13)");
-      n = sc.nextInt();
+      s = "spades";
+      n = 1;
    }
 
    public String showCards ()
