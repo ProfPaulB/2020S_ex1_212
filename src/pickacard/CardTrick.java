@@ -28,7 +28,7 @@ public class CardTrick {
         //[for debug]System.out.println(magicHand[i].getValue()+", "+magicHand[i].getSuit());
         }
     
-    Card cardUser = new Card();
+  /*  Card cardUser = new Card();
     cardUser.setValue(validValue());
     cardUser.setSuit(validSuit());
     //prompt user to input valid value and suit
@@ -36,7 +36,12 @@ public class CardTrick {
     cardMatch(cardUser, magicHand);
     //Match the user's card and output the result
     }
-  
+  */
+        Card luckyCard = new Card();
+        luckyCard.setValue(7);
+        luckyCard.setSuit("Hearts");
+        cardMatch(luckyCard, magicHand);
+        
   public static boolean cardCompare(int i, int value, String suit){
     boolean result = false;
     int s;
@@ -67,7 +72,8 @@ public class CardTrick {
       for(i=0;i<7;i++){
         if ((user.getSuit().toLowerCase().equals(hand[i].getSuit().toLowerCase())) 
               && (user.getValue()==hand[i].getValue())){
-        System.out.println("The user's card is in the magic hand!");
+        //System.out.println("The user's card is in the magic hand!");
+        System.out.println("Yeah!!! You win!!!");
         flag = true;
         break;
         }
@@ -75,9 +81,10 @@ public class CardTrick {
         continue;
         }
       }
-      //System.out.println(i);
+      //[for debug]System.out.println(i);
       if (i==7 && flag == false){
-          System.out.println("The user's card is not in the magic hand!");
+          //System.out.println("The user's card is not in the magic hand!");
+          System.out.println("What a pity! You lose! :_(");
       }
   }
   //cardMatch() match ther user's card with magicHand[] and output the result
