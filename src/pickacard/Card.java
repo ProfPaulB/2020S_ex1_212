@@ -44,6 +44,14 @@ public class Card {
         this.value = value;
     }
    
-   
+   public boolean equals(Card otherCard)
+   {
+       boolean isEquals = false;
+       if (otherCard.getValue() == this.value && otherCard.getSuit() == this.suit)
+       {
+           isEquals = true;
+       }
+       return isEquals;
+   }
     
 }
