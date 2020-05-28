@@ -9,6 +9,8 @@ package pickacard;
  * add your name as an author.
  * @author dancye
  * @author Paul Bonenfant
+ * @author Afnan Yousuf
+ * @version 1.0 05/27/2020
  */
 public class Card {
 
