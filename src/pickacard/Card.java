@@ -8,6 +8,7 @@ package pickacard;
  * This code is to be used in Exercise 1. When you create your own branch,
  *
  * @author Gurvesh Sidhu
+ * 27-05-2020
  */
 public class Card
 {
