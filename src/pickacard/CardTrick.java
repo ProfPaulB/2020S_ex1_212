@@ -22,17 +22,19 @@ public class CardTrick {
         c.setSuit(Card.SUITS[random.nextInt(4)]);
             //c.setValue(insert call to random number generator here)
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-        } while (cardCompare(i, (c.getValue()-1), c.getSuit()));      
+        } while (cardCompare(i, (c.getValue()-1), c.getSuit())); 
+        //Use the cardCompare() to insure there's no duplicate in the magic hand
         magicHand[i]=c;
-        //System.out.println(magicHand[i].getValue()+", "+magicHand[i].getSuit());
+        //[for debug]System.out.println(magicHand[i].getValue()+", "+magicHand[i].getSuit());
         }
     
     Card cardUser = new Card();
     cardUser.setValue(validValue());
     cardUser.setSuit(validSuit());
-    //System.out.println(cardUser.getValue()+", "+cardUser.getSuit());
+    //prompt user to input valid value and suit
+    //[for debug]System.out.println(cardUser.getValue()+", "+cardUser.getSuit());
     cardMatch(cardUser, magicHand);
-    
+    //Match the user's card and output the result
     }
   
   public static boolean cardCompare(int i, int value, String suit){
@@ -57,6 +59,7 @@ public class CardTrick {
     }
     return result;
   }
+  //cardCompare() determines if there's duplicate in magicHand[]
   
   public static void cardMatch(Card user, Card[] hand){
       int i;
@@ -77,6 +80,7 @@ public class CardTrick {
           System.out.println("The user's card is not in the magic hand!");
       }
   }
+  //cardMatch() match ther user's card with magicHand[] and output the result
   
   public static int validValue(){
       boolean flag = true;
@@ -99,6 +103,8 @@ public class CardTrick {
           }
           return num;
       }
+  //validValue() insures a valid input for value 
+  
 public static String validSuit(){
       boolean flag = true;
       String input="";
@@ -120,6 +126,7 @@ public static String validSuit(){
       }
           return input;
       }
+  //validSuit() insures a valid input for suit
       
   public static boolean isInt(String input){
     try{
@@ -130,6 +137,8 @@ public static String validSuit(){
       return false;
     }
   }
+  //isInt() helps the validValue get an integer value
+  
 }
       
         //insert code to ask the user for Card value and suit, create their card
