@@ -47,6 +47,11 @@ public class CardTrick {
         pickedCard.setValue(pickedValue);
         pickedCard.setSuit(Card.SUITS[pickedSuit]);
         
+        //hard-coded Ace of Diamonds
+        Card hardCodedCard = new Card();
+        hardCodedCard.setValue(1);
+        hardCodedCard.setSuit(Card.SUITS[1]);
+        
         System.out.printf("You have selected the [%d of %s]%n", 
             pickedCard.getValue(), pickedCard.getSuit());
         // and search magicHand here
