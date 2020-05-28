@@ -13,7 +13,6 @@ public class CardTrick {
 
     public static void main(String[] args) {
         Random random = new Random();
-        
         Card[] magicHand = new Card[7];
 
         for (int i = 0; i < magicHand.length; i++) {
@@ -26,21 +25,15 @@ public class CardTrick {
         } while (cardCompare(i, (c.getValue()-1), c.getSuit()));      
         magicHand[i]=c;
         //System.out.println(magicHand[i].getValue()+", "+magicHand[i].getSuit());
-        
         }
     
     Card cardUser = new Card();
-    Scanner in = new Scanner(System.in);
-    System.out.println("Please input the Card Value:");
-    int userValue = in.nextInt();
-    System.out.println("Please input the Card Suit:");
-    String userSuit = in.next();
-    cardUser.setValue(userValue);
-    cardUser.setSuit(userSuit);
+    cardUser.setValue(validValue());
+    cardUser.setSuit(validSuit());
     //System.out.println(cardUser.getValue()+", "+cardUser.getSuit());
     cardMatch(cardUser, magicHand);
     
-  }
+    }
   
   public static boolean cardCompare(int i, int value, String suit){
     boolean result = false;
@@ -53,7 +46,7 @@ public class CardTrick {
       s=2;
     else
       s=3;
-     boolean[][][] isEqual = new boolean[7][13][4];
+    boolean[][][] isEqual = new boolean[7][13][4];
     isEqual[i][value][s]= true;
     for (int j=0; j<=i; j++){
       if (isEqual[j][value][s]&&(j!=i)){
@@ -78,7 +71,57 @@ public class CardTrick {
     else
         System.out.println("The user's card is not in the magic hand!");
   }
-  
+  public static int validValue(){
+      boolean flag = true;
+      int num=0;
+      Scanner in = new Scanner(System.in);
+      while(flag){
+          System.out.println("Please input the Card Value:");
+          String input = in.next();
+          if (isInt(input)){
+              num=Integer.parseInt(input);
+              if(num<1||num>13){
+                  System.out.println("Error: Value must be between 1 and 13.");
+              }
+              else{
+                  flag=false;
+              }
+          }
+          else
+              System.out.println("Error: Please input a number");
+          }
+          return num;
+      }
+public static String validSuit(){
+      boolean flag = true;
+      String input="";
+      Scanner in = new Scanner(System.in);
+      while(flag){
+          System.out.println("Please input the Card Suit:");
+          input = in.next();
+          for(int i=0;i<4;i++) {
+              if(input!=Card.SUITS[i]){
+                  
+                  System.out.println
+                  ("Error: Suit must be \"Hearts\", \"Diamonds\", \"Spades\", or \"Clubs\".");
+              }
+              else{
+                  flag=false;
+              }
+          }
+      }
+          return input;
+      }
+      
+  public static boolean isInt(String input){
+    try{
+      Integer.parseInt(input);
+      return true;
+    }
+    catch (java.lang.NumberFormatException ex){
+      return false;
+    }
+  }
 }
       
         //insert code to ask the user for Card value and suit, create their card
