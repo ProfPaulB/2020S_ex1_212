@@ -26,6 +26,10 @@ public class CardTrick
          c.setSuit(Card.SUITS[rnd.nextInt(4)]);
          magicHand[i] = c;
       }
+      //adding new lucky card with my choice of values
+      Card luckycard= new Card();
+      luckycard.setValue(3);
+      luckycard.setSuit("Spades");
 
       //insert code to ask the user for Card value and suit, create their card
       Scanner scan = new Scanner(System.in);
