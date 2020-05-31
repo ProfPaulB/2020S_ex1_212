@@ -6,7 +6,7 @@ package pickacard;
  *
  * @author dancye
  * @author Paul Bonenfant
- * @Mark Zarak - May 30, 2020
+ * @Mark Zarak - May 31, 2020
  *
  */
 import java.util.Scanner;
@@ -34,21 +34,12 @@ public class CardTrick {
 
         }
 
-        //insert code to ask the user for Card value and suit, create their card
-        Card guessCard = new Card();
-        
-        System.out.print("Pick a card number (1-13): ");
-        guessCard.setValue(sc.nextInt());
-
-        System.out.print("Pick a suit (Hearts = 1, Diamonds = 2, Spades = 3, Clubs = 4): ");
-        guessCard.setSuit(Card.SUITS[sc.nextInt() - 1]);
-
         // and search magicHand here
         //Then report the result here
         boolean found = false;
-        for (int i = 0; i < magicHand.length; i++) {
-            if (guessCard.getValue() == magicHand[i].getValue() && guessCard.getSuit().equals(magicHand[i].getSuit())) {
-                System.out.println("Congratulations! You correctly guessed the card " + magicHand[i].getValue() + " of " + magicHand[i].getSuit() + ".");
+        for (Card magicHand1 : magicHand) {
+            if (luckyCard.getValue() == magicHand1.getValue() && luckyCard.getSuit().equals(magicHand1.getSuit())) {
+                System.out.println("Congratulations! You correctly guessed the card " + magicHand1.getValue() + " of " + magicHand1.getSuit() + ".");
                 found = true;
                 break;
             }
