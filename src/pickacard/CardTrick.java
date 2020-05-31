@@ -6,7 +6,7 @@ package pickacard;
  *
  * @author dancye
  * @author Paul Bonenfant
- * @Mark Zarak - May 31, 2020
+ * @author Mark Zarak - May 31, 2020
  *
  */
 import java.util.Scanner;
