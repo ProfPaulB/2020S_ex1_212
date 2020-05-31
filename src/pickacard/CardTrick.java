@@ -18,6 +18,10 @@ public class CardTrick {
         Scanner sc = new Scanner(System.in);
 
         Card[] magicHand = new Card[7];
+        
+        Card luckyCard = new Card();
+        luckyCard.setValue(7);
+        luckyCard.setSuit(Card.SUITS[1]);
 
         for (int i = 0; i < magicHand.length; i++) {
             Card c = new Card();
